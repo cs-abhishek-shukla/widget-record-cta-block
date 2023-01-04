@@ -1,0 +1,19 @@
+{
+    "name": "recordCtaBlock",
+    "title": "Record CTA Block",
+    "subTitle": "Show module records by clicking on CTA button",
+    "version": "1.0.0",
+    "metadata": {
+        "description": "Show module records by clicking on CTA button",
+        "pages": [
+            "View Panel",
+            "Listing"
+        ],
+        "certified": "Yes",
+        "publisher": "Fortinet",
+        "compatibility": [
+            "7.3.0"
+        ]
+    },
+    "development": true
+}
