@@ -1,0 +1,40 @@
+<div class="widget-container chart">
+    <div class="display-flex-space-between margin-chart">
+        <div class="padding-right-0 padding-left-0"
+            data-ng-class="(page === 'dashboard' || page === 'reporting') ? 'widget-dashboard-actions-width' : 'widget-actions-width'">
+        </div>
+    </div>
+    <div class="overflow-hidden padding-bottom-xlg padding-left-90 padding-right-53">
+        <div data-ng-if="!processing && (fieldRows.length > 0)">
+            <div data-ng-repeat="record in fieldRows">
+                <div class="padding-bottom-30 padding-top-30">
+                    <div>
+                        <div class="align-items-center display-flex">
+                            <div class="font-size-12"
+                            data-cs-view-field="record[config.mapping.recordStatus]"></div>
+                            <h4 class="margin-top-md word-break margin-left-lg"
+                                data-cs-view-field="record[config.mapping.cardTitle]"></h4>
+                        </div>
+                            <div title="{{record[config.mapping.subtitle].title}}">
+                                <div class="font-size-13" data-cs-view-field="record[config.mapping.subtitle]"></div>
+                                <div class="font-size-13 margin-top-lg" data-cs-view-field="record[config.mapping.recordResult]"></div>
+                            </div>
+                    </div>
+                    <div class="card-content-fixed-height">
+                        <button type="button" class="btn btn-primary btn-sm"  data-ng-click="openRecord(config.module, record['@id'].value)">
+                            <i class="icon icon-check margin-right-sm"></i>Review Setup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="watermark" data-ng-if="!processing && (!fieldRows || fieldRows.length === 0)">No Records Found
+        </div>
+        <div class="padding-top-sm padding-right-md padding-bottom-sm padding-left-md " data-ng-if="processing">
+            <cs-spinner data-show-background="true"></cs-spinner>
+        </div>
+    </div>
+    <div data-ng-show="!processing && unauthorized" class="unauthorized-message">
+        <h6 class="text-center padding-top-lg padding-bottom-lg font200 font-size-15">You do not have necessary
+            permission for {{ config.module | titlecase }}.</h6>
+    </div>
+</div>
