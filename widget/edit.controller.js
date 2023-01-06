@@ -2,16 +2,16 @@
 (function () {
   angular
     .module("cybersponse")
-    .controller("editRecordCtaBlock100DevCtrl", editRecordCtaBlock100DevCtrl);
+    .controller("editRecordCtaBlock100Ctrl", editRecordCtaBlock100Ctrl);
 
-    editRecordCtaBlock100DevCtrl.$inject = [
+    editRecordCtaBlock100Ctrl.$inject = [
     "$scope",
     "$uibModalInstance",
     "config",
     "appModulesService",
     "Entity"
   ];
-  function editRecordCtaBlock100DevCtrl(
+  function editRecordCtaBlock100Ctrl(
     $scope,
     $uibModalInstance,
     config,
