@@ -2,8 +2,8 @@
 (function () {
   angular
     .module("cybersponse")
-    .controller("recordCtaBlock100DevCtrl", recordCtaBlock100DevCtrl);
-    recordCtaBlock100DevCtrl.$inject = [
+    .controller("recordCtaBlock100Ctrl", recordCtaBlock100Ctrl);
+    recordCtaBlock100Ctrl.$inject = [
     "$scope",
     "config",
     "currentPermissionsService",
@@ -19,7 +19,7 @@
     "$resource",
     "toaster"
   ];
-  function recordCtaBlock100DevCtrl(
+  function recordCtaBlock100Ctrl(
     $scope,
     config,
     currentPermissionsService,
