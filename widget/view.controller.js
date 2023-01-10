@@ -3,7 +3,7 @@
   angular
     .module("cybersponse")
     .controller("recordCtaBlock100Ctrl", recordCtaBlock100Ctrl);
-    recordCtaBlock100Ctrl.$inject = [
+  recordCtaBlock100Ctrl.$inject = [
     "$scope",
     "config",
     "currentPermissionsService",
@@ -17,7 +17,8 @@
     "Query",
     "ModalService",
     "$resource",
-    "toaster"
+    "toaster",
+    "websocketService"
   ];
   function recordCtaBlock100Ctrl(
     $scope,
@@ -33,11 +34,22 @@
     Query,
     ModalService,
     $resource,
-    toaster
+    toaster,
+    websocketService
   ) {
+    var subscription;
     $scope.getList = getList;
     $scope.openRecord = openRecord;
     $scope.config = angular.copy(config);
+    $scope.$on('websocket:reconnect', function () {
+      initWebsocket();
+    });
+    $scope.$on('$destroy', function () {
+      if (subscription) {
+        // Unsubscribe
+        websocketService.unsubscribe(subscription);
+      }
+    });
     function init() {
       $scope.modulePermissions = currentPermissionsService.getPermission($scope.config.module);
       if (!$scope.modulePermissions.read) {
@@ -46,6 +58,7 @@
       }
       _setCardColors();
       $scope.getList();
+      initWebsocket();
     }
 
     function getList() {
@@ -64,13 +77,14 @@
         .then(function () {
           $scope.fieldRows = pagedCollection.fieldRows;
           $scope.processing = false;
+          initWebsocket();
         }, angular.noop)
         .finally(function () {
           $scope.processing = false;
         });
     }
-    
-     function openRecord(module, id) {
+
+    function openRecord(module, id) {
       var state = appModulesService.getState(module);
       var params = {
         module: module,
@@ -80,7 +94,7 @@
       };
       $state.go(state, params);
     }
-      
+
     function _setCardColors() {
       var theme = $rootScope.theme;
       $scope.cardTilesThemeColor = {};
@@ -99,6 +113,14 @@
       }
     }
 
-    init();
+    function initWebsocket() {
+      websocketService.subscribe($scope.config.module, function (data) {
+        $scope.getList();
+      }).then(function (data) {
+        subscription = data;
+      });
+    }
+
+    init()
   }
 })();
