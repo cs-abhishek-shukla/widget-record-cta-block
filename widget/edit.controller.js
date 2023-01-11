@@ -4,7 +4,7 @@
     .module("cybersponse")
     .controller("editRecordCtaBlock100Ctrl", editRecordCtaBlock100Ctrl);
 
-    editRecordCtaBlock100Ctrl.$inject = [
+  editRecordCtaBlock100Ctrl.$inject = [
     "$scope",
     "$uibModalInstance",
     "config",
@@ -21,15 +21,16 @@
     $scope.cancel = cancel;
     $scope.save = save;
     $scope.loadAttributes = loadAttributes;
-    function _init(){
+    function _init() {
       var _config = {
         mapping: {
-            cardTitle: null,
-            subtitle: null,
-            recordResult: null,
-            recordStatus: null
-          }};
-      $scope.config = {};
+          cardTitle: null,
+          subtitle: null,
+          recordResult: null,
+          recordStatus: null
+        }
+      };
+      $scope.config = { labelCTA: 'Review Setup', showIcon: 'icon icon-check' };
       angular.extend($scope.config, _config, config);
       appModulesService.load(true).then(function (modules) {
         $scope.modules = modules;
