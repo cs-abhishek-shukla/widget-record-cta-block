@@ -10,6 +10,7 @@
     $scope.save = save;
     $scope.loadAttributes = loadAttributes;
     function _init() {
+      $scope.query={direction: 'ASC'};
       var _config = {
         mapping: {
           cardTitle: null,
@@ -18,11 +19,11 @@
           recordStatus: null
         }
       };
-      $scope.config = { labelCTA: 'Review Setup', showIcon: 'icon icon-check' };
+      $scope.config = { };
       angular.extend($scope.config, _config, config);
       appModulesService.load(true).then(function (modules) {
         $scope.modules = modules;
-        if ($scope.config.module !== "") {
+        if ($scope.config.module) {
           loadAttributes();
         }
       });
