@@ -4,20 +4,8 @@
     .module("cybersponse")
     .controller("editRecordCtaBlock100Ctrl", editRecordCtaBlock100Ctrl);
 
-  editRecordCtaBlock100Ctrl.$inject = [
-    "$scope",
-    "$uibModalInstance",
-    "config",
-    "appModulesService",
-    "Entity"
-  ];
-  function editRecordCtaBlock100Ctrl(
-    $scope,
-    $uibModalInstance,
-    config,
-    appModulesService,
-    Entity
-  ) {
+  editRecordCtaBlock100Ctrl.$inject = ['$scope', '$uibModalInstance', 'config', 'appModulesService', 'Entity'];
+  function editRecordCtaBlock100Ctrl($scope, $uibModalInstance, config, appModulesService, Entity) {
     $scope.cancel = cancel;
     $scope.save = save;
     $scope.loadAttributes = loadAttributes;
