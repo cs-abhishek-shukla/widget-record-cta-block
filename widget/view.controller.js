@@ -3,40 +3,8 @@
   angular
     .module("cybersponse")
     .controller("recordCtaBlock100Ctrl", recordCtaBlock100Ctrl);
-  recordCtaBlock100Ctrl.$inject = [
-    "$scope",
-    "config",
-    "currentPermissionsService",
-    "PagedCollection",
-    "appModulesService",
-    "$window",
-    "$state",
-    "$filter",
-    "_",
-    "$rootScope",
-    "Query",
-    "ModalService",
-    "$resource",
-    "toaster",
-    "websocketService"
-  ];
-  function recordCtaBlock100Ctrl(
-    $scope,
-    config,
-    currentPermissionsService,
-    PagedCollection,
-    appModulesService,
-    $window,
-    $state,
-    $filter,
-    _,
-    $rootScope,
-    Query,
-    ModalService,
-    $resource,
-    toaster,
-    websocketService
-  ) {
+  recordCtaBlock100Ctrl.$inject = ['$scope', 'config', 'currentPermissionsService', 'PagedCollection', 'appModulesService', '$window', '$state', '$filter', '_', '$rootScope', 'Query', 'ModalService', '$resource', 'toaster', 'websocketService'];
+  function recordCtaBlock100Ctrl($scope, config, currentPermissionsService, PagedCollection, appModulesService, $window, $state, $filter, _, $rootScope, Query, ModalService, $resource, toaster, websocketService) {
     var subscription;
     $scope.getList = getList;
     $scope.openRecord = openRecord;
