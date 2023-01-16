@@ -4,36 +4,26 @@
     .module("cybersponse")
     .controller("editRecordCtaBlock100Ctrl", editRecordCtaBlock100Ctrl);
 
-    editRecordCtaBlock100Ctrl.$inject = [
-    "$scope",
-    "$uibModalInstance",
-    "config",
-    "appModulesService",
-    "Entity"
-  ];
-  function editRecordCtaBlock100Ctrl(
-    $scope,
-    $uibModalInstance,
-    config,
-    appModulesService,
-    Entity
-  ) {
+  editRecordCtaBlock100Ctrl.$inject = ['$scope', '$uibModalInstance', 'config', 'appModulesService', 'Entity'];
+  function editRecordCtaBlock100Ctrl($scope, $uibModalInstance, config, appModulesService, Entity) {
     $scope.cancel = cancel;
     $scope.save = save;
     $scope.loadAttributes = loadAttributes;
-    function _init(){
+    function _init() {
+      $scope.query={direction: 'ASC'};
       var _config = {
         mapping: {
-            cardTitle: null,
-            subtitle: null,
-            recordResult: null,
-            recordStatus: null
-          }};
-      $scope.config = {};
+          cardTitle: null,
+          subtitle: null,
+          recordResult: null,
+          recordStatus: null
+        }
+      };
+      $scope.config = { };
       angular.extend($scope.config, _config, config);
       appModulesService.load(true).then(function (modules) {
         $scope.modules = modules;
-        if ($scope.config.module !== "") {
+        if ($scope.config.module) {
           loadAttributes();
         }
       });

@@ -10,94 +10,104 @@
     </div>
     <div class="modal-body">
         <div class="margin-top-md margin-bottom-md">
-                  <h6>Select Module</h6>
-              </div>
-          <div class="form-group"
-              data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesModule.$invalid && editRecordCTABloackWidgetForm.cardTilesModule.$touched }"
-              data-ng-if="modules || playbookModules">
-              <label for="cardTilesModule" class="control-label">Data Source<span class="text-danger">*</span>
-              </label>
-              <select name="cardTilesModule" id="cardTilesModule" class="form-control"
-                  data-ng-options="module.type as module.name for module in modules | playbookModules"
-                  data-ng-model="config.module" data-ng-change="loadAttributes()" required>
-                  <option value="">Select an Option</option>
-              </select>
-              <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesModule"></div>
-          </div>
-          <div data-ng-if="config.module">
-              <div class="mertics-widget-border padding-top-md padding-bottom-md"></div>
-              <div class="margin-top-md margin-bottom-md">
-                  <h6>Select Card Fields</h6>
-              </div>
-              <div class="form-group"
-                  data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesTitle.$invalid && editRecordCTABloackWidgetForm.cardTilesTitle.$touched}">
-                  <label for="cardTilesTitle" class="control-label">Title <span class="text-danger">*</span></label>
-                  <select id="cardTilesTitle" name="cardTilesTitle" class="form-control"
-                      data-ng-model="config.mapping.cardTitle"
-                      data-ng-options="field.name as field.title for field in fieldsArray | orderBy: 'title'"
-                      data-ng-required="true" required="required">
-                      <option value="" class="" selected="selected">Select a field</option>
-                  </select>
-                  <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesTitle"></div>
-              </div>
-              <div class="form-group"
-                  data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.carsTilesSubTitle.$invalid && editRecordCTABloackWidgetForm.carsTilesSubTitle.$touched}">
-                  <label for="carsTilesSubTitle" class="control-label">Card Details <span class="text-danger">*</span></label>
-                  <select id="carsTilesSubTitle" name="carsTilesSubTitle" class="form-control"
-                      data-ng-model="config.mapping.subtitle"
-                      data-ng-options="field.name as field.title for field in fieldsArray | orderBy: 'title'"
-                      data-ng-required="true" required="required">
-                      <option value="" class="" selected="selected">Select a field</option>
-                  </select>
-                  <div data-cs-messages="editRecordCTABloackWidgetForm.carsTilesSubTitle"></div>
-              </div>
+            <h6>Select Module</h6>
+        </div>
+        <div class="form-group"
+            data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesModule.$invalid && editRecordCTABloackWidgetForm.cardTilesModule.$touched }"
+            data-ng-if="modules || playbookModules">
+            <label for="cardTilesModule" class="control-label">Data Source<span class="text-danger">*</span>
+            </label>
+            <select name="cardTilesModule" id="cardTilesModule" class="form-control"
+                data-ng-options="module.type as module.name for module in modules | playbookModules"
+                data-ng-model="config.module" data-ng-change="loadAttributes()" required>
+                <option value="">Select an Option</option>
+            </select>
+            <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesModule"></div>
+        </div>
+        <div data-ng-if="config.module">
+            <div class="mertics-widget-border padding-top-md padding-bottom-md"></div>
+            <div class="margin-top-md margin-bottom-md">
+                <h6>Select Fields</h6>
+            </div>
             <div class="form-group"
-                  data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.carsTilesSubResult.$invalid && editRecordCTABloackWidgetForm.carsTilesSubResult.$touched}">
-                  <label for="carsTilesSubResult" class="control-label">Card Result <span class="text-danger">*</span></label>
-                  <select id="carsTilesSubResult" name="carsTilesSubResult" class="form-control"
-                      data-ng-model="config.mapping.recordResult"
-                      data-ng-options="field.name as field.title for field in fieldsArray | orderBy: 'title'"
-                      data-ng-required="true" required="required">
-                      <option value="" class="" selected="selected">Select a field</option>
-                  </select>
-                  <div data-cs-messages="editRecordCTABloackWidgetForm.carsTilesSubResult"></div>
-              </div>
-              <div class="form-group"
-                  data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.carsTilesStatus.$invalid && editRecordCTABloackWidgetForm.carsTilesStatus.$touched}">
-                  <label for="carsTilesStatus" class="control-label">Picklist <span class="text-danger">*</span></label>
-                  <select id="carsTilesStatus" name="carsTilesStatus" class="form-control"
-                      data-ng-model="config.mapping.recordStatus"
-                      data-ng-options="field.name as field.title for field in pickListFields | orderBy: 'title'"
-                      data-ng-required="true" required="required">
-                      <option value="" class="" selected="selected">Select a field</option>
-                  </select>
-                  <div data-cs-messages="editRecordCTABloackWidgetForm.carsTilesStatus"></div>
-              </div>
-              <div class="mertics-widget-border padding-top-md padding-bottom-md"></div>
-              <div class="margin-top-md margin-bottom-md">
-                  <h6>Filter Criteria</h6>
-              </div>
-              <div class="form-group"
-                  data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesfilters.$invalid && editRecordCTABloackWidgetForm.cardTilesfilters.$touched }">
-                  <div data-cs-conditional data-ng-if="fieldsArray.length > 0" data-fields="$parent.fields"
-                      data-reset-field="$parent.fields" data-mode="'queryFilters'" data-ng-model="$parent.config.query"
-                      data-parent-form="editRecordCTABloackWidgetForm"
-                      data-enable-expression="(page==='dashboard' || page==='reporting')" data-show-uuid="true"
-                      data-form-name="'editRecordCTABloackWidgetForm'"></div>
-                  <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesfilters"></div>
-              </div>
-              <div class="mertics-widget-border padding-top-md padding-bottom-md"></div>
-              <div class="margin-top-md margin-bottom-md">
-                  <h6>Default Sort</h6>
-              </div>
-              <div class="form-group"
-                  data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesSortBy.$invalid && editRecordCTABloackWidgetForm.cardTilesSortBy.$touched }">
-                  <div data-cs-default-sort data-ng-model="config.query" data-fields-array="fieldsArray"
-                      data-parent-form="cardForm"></div>
-                  <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesSortBy"></div>
-              </div>
-          </div>
-      </div>
+                data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesTitle.$invalid && editRecordCTABloackWidgetForm.cardTilesTitle.$touched}">
+                <label for="cardTilesTitle" class="control-label">Block Title <span class="text-danger">*</span></label>
+                <select id="cardTilesTitle" name="cardTilesTitle" class="form-control"
+                    data-ng-model="config.mapping.cardTitle"
+                    data-ng-options="field.name as field.title for field in fieldsArray | orderBy: 'title'"
+                    data-ng-required="true" required="required">
+                    <option value="" class="" selected="selected">Select a field</option>
+                </select>
+                <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesTitle"></div>
+            </div>
+            <div class="form-group"
+                data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.carsTilesStatus.$invalid && editRecordCTABloackWidgetForm.carsTilesStatus.$touched}">
+                <label for="carsTilesStatus" class="control-label">Picklist <span class="text-danger">*</span></label>
+                <select id="carsTilesStatus" name="carsTilesStatus" class="form-control"
+                    data-ng-model="config.mapping.recordStatus"
+                    data-ng-options="field.name as field.title for field in pickListFields | orderBy: 'title'"
+                    data-ng-required="true" required="required">
+                    <option value="" class="" selected="selected">Select a field</option>
+                </select>
+                <div data-cs-messages="editRecordCTABloackWidgetForm.carsTilesStatus"></div>
+            </div>
+            <div class="form-group"
+                data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.carsTilesSubTitle.$invalid && editRecordCTABloackWidgetForm.carsTilesSubTitle.$touched}">
+                <label for="carsTilesSubTitle" class="control-label">Content1 <span class="text-danger">*</span></label>
+                <select id="carsTilesSubTitle" name="carsTilesSubTitle" class="form-control"
+                    data-ng-model="config.mapping.subtitle"
+                    data-ng-options="field.name as field.title for field in fieldsArray | orderBy: 'title'"
+                    data-ng-required="true" required="required">
+                    <option value="" class="" selected="selected">Select a field</option>
+                </select>
+                <div data-cs-messages="editRecordCTABloackWidgetForm.carsTilesSubTitle"></div>
+            </div>
+            <div class="form-group"
+                data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.carsTilesSubResult.$invalid && editRecordCTABloackWidgetForm.carsTilesSubResult.$touched}">
+                <label for="carsTilesSubResult" class="control-label">Content2 <span
+                        class="text-danger">*</span></label>
+                <select id="carsTilesSubResult" name="carsTilesSubResult" class="form-control"
+                    data-ng-model="config.mapping.recordResult"
+                    data-ng-options="field.name as field.title for field in fieldsArray | orderBy: 'title'"
+                    data-ng-required="true" required="required">
+                    <option value="" class="" selected="selected">Select a field</option>
+                </select>
+                <div data-cs-messages="editRecordCTABloackWidgetForm.carsTilesSubResult"></div>
+            </div>
+            <div class="form-grop margin-bottom-md margin-top-md">
+                <label for="showIcon" class="control-label">CTA Button Icon <span class="text-danger">*</span></label>
+                <div cs-icons data-ng-model="config.showIcon" style="width: 50px; display: inline-block;"></div>
+            </div>
+            <div class="form-group">
+                <label for="title" class="control-label">CTA Button Label <span class="text-danger">*</span></label>
+                <input id="labelCTA" name="labelCTA" type="text" class="form-control" data-ng-model="config.labelCTA">
+            </div>
+
+            <div class="mertics-widget-border padding-top-md padding-bottom-md"></div>
+            <div class="margin-top-md margin-bottom-md">
+                <h6>Filter Criteria</h6>
+            </div>
+            <div class="form-group"
+                data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesfilters.$invalid && editRecordCTABloackWidgetForm.cardTilesfilters.$touched }">
+                <div data-cs-conditional data-ng-if="fieldsArray.length > 0" data-fields="fields"
+                    data-reset-field="fields" data-mode="'queryFilters'" data-ng-model="config.query"
+                    data-parent-form="editRecordCTABloackWidgetForm"
+                    data-enable-expression="(page==='dashboard' || page==='reporting')" data-show-uuid="true"
+                    data-form-name="'editRecordCTABloackWidgetForm'"></div>
+                <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesfilters"></div>
+            </div>
+            <div class="mertics-widget-border padding-top-md padding-bottom-md"></div>
+            <div class="margin-top-md margin-bottom-md">
+                <h6>Default Sort</h6>
+            </div>
+            <div class="form-group"
+                data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesSortBy.$invalid && editRecordCTABloackWidgetForm.cardTilesSortBy.$touched }">
+                <div data-cs-default-sort data-ng-model="query" data-fields-array="fieldsArray"
+                    data-parent-form="cardForm"></div>
+                <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesSortBy"></div>
+            </div>
+        </div>
+    </div>
     <div class="modal-footer">
         <button id="edit-widget-save" type="submit" class="btn btn-sm btn-primary"><i
                 class="icon icon-check margin-right-sm"></i>Save</button>
