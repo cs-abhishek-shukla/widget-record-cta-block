@@ -9,6 +9,7 @@
     $scope.cancel = cancel;
     $scope.save = save;
     $scope.loadAttributes = loadAttributes;
+    
     function _init() {
       $scope.query={direction: 'ASC'};
       var _config = {
@@ -21,6 +22,9 @@
       };
       $scope.config = { };
       angular.extend($scope.config, _config, config);
+      $scope.pageConfig = {
+        maxRecordSize: [5, 10, 15, 20],
+      };
       appModulesService.load(true).then(function (modules) {
         $scope.modules = modules;
         if ($scope.config.module) {

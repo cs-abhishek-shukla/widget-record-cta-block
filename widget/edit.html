@@ -23,6 +23,12 @@
                 <option value="">Select an Option</option>
             </select>
             <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesModule"></div>
+            <label for="cardTilesMaxRecordSize" class="control-label">Max Record Limit</label>
+            <select name="cardTilesMaxRecordSize" id="cardTilesMaxRecordSize" class="form-control" style="width:30%"
+                ng-options="size for size in pageConfig.maxRecordSize" ng-model="config.query.limit" required>
+            </select>
+            <div data-cs-messages="editCardTilesWidgetForm.cardTilesMaxRecordSize">
+            </div>
         </div>
         <div data-ng-if="config.module">
             <div class="mertics-widget-border padding-top-md padding-bottom-md"></div>
@@ -89,9 +95,9 @@
             </div>
             <div class="form-group"
                 data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesfilters.$invalid && editRecordCTABloackWidgetForm.cardTilesfilters.$touched }">
-                <div data-cs-conditional data-ng-if="fieldsArray.length > 0" data-fields="fields"
-                    data-reset-field="fields" data-mode="'queryFilters'" data-ng-model="config.query"
-                    data-parent-form="editRecordCTABloackWidgetForm"
+                <div data-cs-conditional data-ng-if="fieldsArray.length > 0" name="cardTilesfilters"
+                    data-fields="fields" data-reset-field="fields" data-mode="'queryFilters'"
+                    data-ng-model="config.query" data-parent-form="editRecordCTABloackWidgetForm"
                     data-enable-expression="(page==='dashboard' || page==='reporting')" data-show-uuid="true"
                     data-form-name="'editRecordCTABloackWidgetForm'"></div>
                 <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesfilters"></div>
@@ -102,8 +108,8 @@
             </div>
             <div class="form-group"
                 data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesSortBy.$invalid && editRecordCTABloackWidgetForm.cardTilesSortBy.$touched }">
-                <div data-cs-default-sort data-ng-model="query" data-fields-array="fieldsArray"
-                    data-parent-form="cardForm"></div>
+                <div data-cs-default-sort name="cardTilesSortBy" data-ng-model="config.query"
+                    data-fields-array="fieldsArray" data-parent-form="cardForm"></div>
                 <div data-cs-messages="editRecordCTABloackWidgetForm.cardTilesSortBy"></div>
             </div>
         </div>
