@@ -10,11 +10,14 @@
             "View Panel",
             "Listing"
         ],
+        "snapshots": [
+            "https:\/\/repo.fortisoar.fortinet.com\/widgets\/recordCtaBlock-1.0.0\/images\/record_cta_block_view.png",
+            "https:\/\/repo.fortisoar.fortinet.com\/widgets\/recordCtaBlock-1.0.0\/images\/record_cta_block_edit.png"
+        ],
         "certified": "Yes",
         "publisher": "Fortinet",
         "compatibility": [
-            "7.3.0"
+            "7.2.0"
         ]
-    },
-    "development": true
+    }
 }
