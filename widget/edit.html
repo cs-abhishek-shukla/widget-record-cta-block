@@ -1,7 +1,7 @@
 <form data-ng-submit="save()" class="noMargin" name="editRecordCTABloackWidgetForm"
     data-ng-class="{'state-wait': processing }" novalidate>
     <div class="modal-header">
-        <h3 class="modal-title col-md-9">Record CTA Block Edit View</h3>
+        <h3 class="modal-title col-md-9">Record CTA Tile Edit View</h3>
         <button type="button" class="close" data-ng-click="cancel()" data-dismiss="modal" aria-label="Close"
             id="close-edit-widget-form-btn">
             <div aria-hidden="true" class="version-button">+
@@ -37,7 +37,7 @@
             </div>
             <div class="form-group"
                 data-ng-class="{ 'has-error': editRecordCTABloackWidgetForm.cardTilesTitle.$invalid && editRecordCTABloackWidgetForm.cardTilesTitle.$touched}">
-                <label for="cardTilesTitle" class="control-label">Block Title <span class="text-danger">*</span></label>
+                <label for="cardTilesTitle" class="control-label">Title <span class="text-danger">*</span></label>
                 <select id="cardTilesTitle" name="cardTilesTitle" class="form-control"
                     data-ng-model="config.mapping.cardTitle"
                     data-ng-options="field.name as field.title for field in fieldsArray | orderBy: 'title'"
