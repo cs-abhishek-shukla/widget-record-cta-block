@@ -15,6 +15,7 @@
             "https:\/\/repo.fortisoar.fortinet.com\/widgets\/recordCtaBlock-1.0.0\/images\/record_cta_block_edit.png"
         ],
         "certified": "Yes",
+        "help_online": "https:\/\/github.com\/fortinet-fortisoar\/widget-record-cta-block\/blob\/release\/1.0.0\/README.md",
         "publisher": "Fortinet",
         "compatibility": [
             "7.2.0"
