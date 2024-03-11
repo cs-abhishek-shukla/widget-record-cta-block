@@ -1,10 +1,14 @@
+/* Copyright start
+  MIT License
+  Copyright (c) 2024 Fortinet Inc
+  Copyright end */
 "use strict";
 (function () {
   angular
     .module("cybersponse")
-    .controller("recordCtaBlock100Ctrl", recordCtaBlock100Ctrl);
-  recordCtaBlock100Ctrl.$inject = ['$scope', 'config', 'currentPermissionsService', 'PagedCollection', 'appModulesService', '$window', '$state', '$filter', '_', '$rootScope', 'Query', 'ModalService', '$resource', 'toaster', 'websocketService'];
-  function recordCtaBlock100Ctrl($scope, config, currentPermissionsService, PagedCollection, appModulesService, $window, $state, $filter, _, $rootScope, Query, ModalService, $resource, toaster, websocketService) {
+    .controller("recordCtaBlock101Ctrl", recordCtaBlock101Ctrl);
+  recordCtaBlock101Ctrl.$inject = ['$scope', 'config', 'currentPermissionsService', 'PagedCollection', 'appModulesService', '$state', '$filter', '_', '$rootScope', 'Query', 'websocketService'];
+  function recordCtaBlock101Ctrl($scope, config, currentPermissionsService, PagedCollection, appModulesService, $state, $filter, _, $rootScope, Query, websocketService) {
     var subscription;
     $scope.getList = getList;
     $scope.openRecord = openRecord;
@@ -67,17 +71,17 @@
       var theme = $rootScope.theme;
       $scope.cardTilesThemeColor = {};
       if (theme.id === "light") {
-        $scope.cardTilesThemeColor.cardBackgroundColor = "#eeeeee";
-        $scope.cardTilesThemeColor.cardBorderLeftColor = "#eeeeee";
+        $scope.cardTilesThemeColor.cardBackgroundColor = "#fff";
+        $scope.cardTilesThemeColor.recordStatusColor = "#0D9BE3";
         $scope.cardTilesThemeColor.cardIconSeparator = "#eeeeee";
       } else if (theme.id === "steel") {
-        $scope.cardTilesThemeColor.cardBackgroundColor = "#29323e";
-        $scope.cardTilesThemeColor.cardBorderLeftColor = "#29323e";
+        $scope.cardTilesThemeColor.cardBackgroundColor = "#fff";
+        $scope.cardTilesThemeColor.recordStatusColor = "#22a6af";
         $scope.cardTilesThemeColor.cardIconSeparator = "#29323e";
       } else {
-        $scope.cardTilesThemeColor.cardBackgroundColor = "#262626";
-        $scope.cardTilesThemeColor.cardBorderLeftColor = "#262626";
-        $scope.cardTilesThemeColor.cardIconSeparator = "#29323e";
+        $scope.cardTilesThemeColor.cardBackgroundColor = "#fff";
+        $scope.cardTilesThemeColor.recordStatusColor = "#2cafc3";
+        $scope.cardTilesThemeColor.cardIconSeparator = "#262626";
       }
     }
 
