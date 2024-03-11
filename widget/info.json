@@ -2,8 +2,8 @@
     "name": "recordCtaBlock",
     "title": "Record CTA Tile",
     "subTitle": "Show module records by clicking on CTA button",
-    "version": "1.0.0",
-    "published_date": "1658838600",
+    "version": "1.0.1",
+    "published_date": "1706787666",
     "metadata": {
         "description": "Show module records by clicking on CTA button",
         "pages": [
@@ -11,11 +11,11 @@
             "Listing"
         ],
         "snapshots": [
-            "https:\/\/repo.fortisoar.fortinet.com\/widgets\/recordCtaBlock-1.0.0\/images\/record_cta_block_view.png",
-            "https:\/\/repo.fortisoar.fortinet.com\/widgets\/recordCtaBlock-1.0.0\/images\/record_cta_block_edit.png"
+            "https:\/\/repo.fortisoar.fortinet.com\/widgets\/recordCtaBlock-1.0.1\/images\/record_cta_block_view.png",
+            "https:\/\/repo.fortisoar.fortinet.com\/widgets\/recordCtaBlock-1.0.1\/images\/record_cta_block_edit.png"
         ],
         "certified": "Yes",
-        "help_online": "https:\/\/github.com\/fortinet-fortisoar\/widget-record-cta-block\/blob\/release\/1.0.0\/README.md",
+        "help_online": "https:\/\/github.com\/fortinet-fortisoar\/widget-record-cta-block\/blob\/release\/1.0.1\/README.md",
         "publisher": "Fortinet",
         "compatibility": [
             "7.2.0"
