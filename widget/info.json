@@ -5,7 +5,7 @@
     "version": "1.0.1",
     "published_date": "1706787666",
     "metadata": {
-        "description": "Show module records by clicking on CTA button",
+        "description": "The Record CTA Tile widget helps visualize records based on a specified data source by clicking the CTA (Call to Action) button",
         "pages": [
             "View Panel",
             "Listing"
