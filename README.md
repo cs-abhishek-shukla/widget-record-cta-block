@@ -6,7 +6,7 @@
 
 - **Publisher**: Fortinet  
 
-- **Compatibility**: 7.2.0 and later
+- **Compatibility**: 7.4.3 and later
 
 - **Applicable**: View Panel and Listing View
 

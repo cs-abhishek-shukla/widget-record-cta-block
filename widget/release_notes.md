@@ -1,4 +1,4 @@
 ## What's New
  
-- The *Title* field's is now text-wrapped for enhanced readability.
-- The card's border is now colored as per theme if no color is assigned in the card's picklist
+- The *Title* and *CTA Button Label* fields are now text-wrapped for enhanced readability.
+- When the value selected in the widget's **Picklist** field has no color assigned, a color based on theme is applied on the card.
